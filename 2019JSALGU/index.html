@@ -13,17 +13,25 @@
         //Ex. "The quick brown fox jumped over the lazy dog"
         //Ex. "What if we try a super long word such as ororhinolarygology"
 
-        function findLongestWord(str){
-            var words = str.split(' ');
-            var maxLength = 0;
-            for (var i = 0; i < words.length; i++) {
-                if (words[i].length > maxLength){
-                maxLength = words[i].length;
-                }
-            }
-            return maxLength
+        // function findLongestWord(str){
+        //     var words = str.split(' ');
+        //     var maxLength = 0;
+        //     for (var i = 0; i < words.length; i++) {
+        //         if (words[i].length > maxLength){
+        //         maxLength = words[i].length;
+        //         }
+        //     }
+        //     return maxLength
+        // }
+
+        //INTERMEDIATE
+        function findLongestWord(str) {
+            return str.split(' ').reduce(function(x,y) {
+                return Math.max(x, y.length)
+            }, 0);
         }
-        // console.log(findLongestWord( "The quick brown fox jumped over the lazy dog"));
-        // console.log(findLongestWord("What if we try a super long word such as ororhinolarygology"))
+
+        console.log(findLongestWord( "The quick brown fox jumped over the lazy dog"));
+        console.log(findLongestWord("What if we try a super long word such as ororhinolarygology"))
     </script>
 </html>
