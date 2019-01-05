@@ -16,12 +16,22 @@
 
         //1st Solution
 
-        function reverseString(str) {
-            str = str.split('');
-            str = str.reverse('');
-            str = str.join('');
+        // function reverseString(str) {
+        //     str = str.split('');
+        //     str = str.reverse('');
+        //     str = str.join('');
 
-            return str;
+        //     return str;
+        // }
+
+        //2nd Solution
+
+        function reverseString(str) {
+            var newStr = "";
+            for (var i = str.length -1; i >= 0; i--) {
+                newStr += str[i];
+            }
+            return newStr;
         }
 
         console.log(reverseString("hello"));
