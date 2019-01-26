@@ -15,12 +15,27 @@
         function palindrome(str) {
             //asssign a front and back pointer
             let front = 0;
-            let back = str.length -1;
+            let back = str.length - 1;
 
             // back and front pointers wont meet in the middle, so use (back>front)
             while (back > front) {
-
-            }
+                //increament front pointer if surrent character doesn't meet criteria
+                while (str[front].match(/[\W_]/)) {
+                    front++;
+                    continue;
+                }
+                while (str[back].match(/[\W_]/)){
+                back--;
+                continue;
+                }
+            // finally do the comparison on the final cureent character
+            if (str[front].toLowerCase() !== str[back].toLowerCase()) return false;
+            front++;
+            back--;
         }
+        // if the whole string has been compared without returning false, it's a palindrone
+            return true;
+        }
+        console.log(palindrome("eye"));
     </script>
     </html>
